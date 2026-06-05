@@ -1,22 +1,22 @@
 import {
   Phone,
   Search,
-  BadgeDollarSign,
-  Wallet,
+  FileText,
+  Banknote,
   ArrowRight,
 } from "lucide-react";
 
 export default function HowItWorksSectionV2() {
   return (
-    <section className="px-4 py-6">
+    <section className="px-4 py-2">
       {/* TITLE */}
 
       <h2
         className="
           text-center
-          text-[34px]
+          text-[20px]
           font-bold
-          text-[#031B4E]
+          text-[#111827]
         "
         style={{
           fontFamily:
@@ -26,7 +26,7 @@ export default function HowItWorksSectionV2() {
         How It Works
       </h2>
 
-      <div className="mx-auto mt-2 mb-10 h-[3px] w-12 rounded bg-[#D8A11A]" />
+      <div className="mx-auto mt-1 mb-4 h-[2px] w-10 bg-[#D8A11A]" />
 
       {/* TIMELINE */}
 
@@ -36,40 +36,40 @@ export default function HowItWorksSectionV2() {
             absolute
             left-0
             right-0
-            top-8
+            top-[34px]
             border-t-2
             border-dashed
-            border-[#D8A11A]
+            border-[#D8A11A]/80
           "
         />
 
-        <div className="relative grid grid-cols-4">
+        <div className="relative grid grid-cols-4 gap-1">
           <Step
             number="1"
-            icon={<Phone size={26} />}
+            icon={<Phone size={24} />}
             title="Contact Us"
             description="Submit your details or call us."
           />
 
           <Step
             number="2"
-            icon={<Search size={26} />}
-            title="Evaluation"
-            description="Transparent gold testing."
+            icon={<Search size={24} />}
+            title="Gold Evaluation"
+            description="Visit our store for a transparent evaluation."
           />
 
           <Step
             number="3"
-            icon={<BadgeDollarSign size={26} />}
-            title="Best Offer"
-            description="Receive our highest quote."
+            icon={<FileText size={24} />}
+            title="Get The Best Offer"
+            description="We offer you the best market value for your gold."
           />
 
           <Step
             number="4"
-            icon={<Wallet size={26} />}
-            title="Get Paid"
-            description="Instant settlement."
+            icon={<Banknote size={24} />}
+            title="Get Paid Instantly"
+            description="Accept the offer and receive your payment instantly."
           />
         </div>
       </div>
@@ -78,24 +78,29 @@ export default function HowItWorksSectionV2() {
 
       <button
         className="
-          mt-10
+          mx-auto
+          mt-4
           flex
-          w-full
+          w-[80%]
           items-center
           justify-center
-          gap-3
+          gap-2
           rounded-xl
           border
           border-[#D8A11A]
-          py-4
-          text-lg
+          py-2
+          text-[15px]
           font-semibold
-          text-[#D8A11A]
+          text-[#B67A16]
         "
+        style={{
+          fontFamily:
+            'Georgia, "Times New Roman", serif',
+        }}
       >
         View Full Selling Process
 
-        <ArrowRight size={18} />
+        <ArrowRight size={16} />
       </button>
     </section>
   );
@@ -121,39 +126,58 @@ function Step({
           relative
           z-10
           mx-auto
-          mb-4
+          mb-1
           flex
           h-16
           w-16
           items-center
           justify-center
           rounded-full
-          border-4
-          border-[#FAF7F2]
-          bg-white
-          text-[#D8A11A]
+          bg-[#FCF8F2]
+          text-[#8B5A16]
           shadow-sm
         "
       >
         {icon}
-      </div>
 
-      {/* NUMBER */}
+        {/* NUMBER BADGE */}
 
-      <div className="mb-2 text-sm font-bold text-[#D8A11A]">
-        {number}
+        <div
+          className="
+            absolute
+            -bottom-1
+            -left-1
+            flex
+            h-6
+            w-6
+            items-center
+            justify-center
+            rounded-full
+            bg-[#021B35]
+            text-[10px]
+            font-bold
+            text-white
+          "
+        >
+          {number}
+        </div>
       </div>
 
       {/* TITLE */}
 
       <h3
         className="
-          min-h-[44px]
+          min-h-[32px]
           px-1
-          text-[14px]
-          font-semibold
-          text-[#031B4E]
+          text-[12px]
+          font-bold
+          leading-4
+          text-[#111827]
         "
+        style={{
+          fontFamily:
+            'Georgia, "Times New Roman", serif',
+        }}
       >
         {title}
       </h3>
@@ -162,11 +186,11 @@ function Step({
 
       <p
         className="
-          mt-2
+          mt-1
           px-1
-          text-[11px]
-          leading-5
-          text-[#687280]
+          text-[10px]
+          leading-4
+          text-[#111827]
         "
       >
         {description}

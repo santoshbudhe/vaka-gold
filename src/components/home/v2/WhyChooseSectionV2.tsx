@@ -1,34 +1,34 @@
 import {
   ShieldCheck,
   BadgeDollarSign,
-  Wallet,
+  Banknote,
   Users,
   ArrowRight,
 } from "lucide-react";
 
 export default function WhyChooseSectionV2() {
   return (
-    <section className="px-4 py-4">
+    <section className="px-4">
       <div
         className="
           overflow-hidden
           rounded-[24px]
-          bg-[#031B4E]
-          px-5
-          py-6
+          bg-[#021B35]
+          px-4
+          py-4
           text-white
         "
       >
         {/* TITLE */}
 
-        <div className="mb-8 flex items-center gap-4">
-          <div className="h-[2px] flex-1 bg-[#D8A11A]" />
+        <div className="mb-5 flex items-center justify-center gap-4">
+          <div className="h-[2px] w-[60px] bg-[#D8A11A]" />
 
           <h2
             className="
               whitespace-nowrap
               text-center
-              text-[26px]
+              text-[20px]
               font-bold
             "
             style={{
@@ -39,14 +39,14 @@ export default function WhyChooseSectionV2() {
             Why Choose VAKA GOLD?
           </h2>
 
-          <div className="h-[2px] flex-1 bg-[#D8A11A]" />
+          <div className="h-[2px] w-[60px] bg-[#D8A11A]" />
         </div>
 
         {/* FEATURES */}
 
         <div className="grid grid-cols-4">
           <Feature
-            icon={<ShieldCheck size={34} />}
+            icon={<ShieldCheck size={28} />}
             title={
               <>
                 Transparent
@@ -66,7 +66,7 @@ export default function WhyChooseSectionV2() {
           />
 
           <Feature
-            icon={<BadgeDollarSign size={34} />}
+            icon={<BadgeDollarSign size={28} />}
             title={
               <>
                 Best Market
@@ -87,7 +87,7 @@ export default function WhyChooseSectionV2() {
           />
 
           <Feature
-            icon={<Wallet size={34} />}
+            icon={<Banknote size={28} />}
             title={
               <>
                 Immediate
@@ -108,7 +108,7 @@ export default function WhyChooseSectionV2() {
           />
 
           <Feature
-            icon={<Users size={34} />}
+            icon={<Users size={28} />}
             title={
               <>
                 Experienced
@@ -133,24 +133,29 @@ export default function WhyChooseSectionV2() {
 
         <button
           className="
-            mt-8
+            mx-auto
+            mt-5
             flex
-            w-full
+            w-[72%]
             items-center
             justify-center
             gap-3
             rounded-xl
             border
             border-[#D8A11A]
-            py-4
-            text-lg
+            py-2
+            text-[14px]
             font-semibold
             text-[#D8A11A]
           "
+          style={{
+            fontFamily:
+              'Georgia, "Times New Roman", serif',
+          }}
         >
           About VAKA GOLD
 
-          <ArrowRight size={18} />
+          <ArrowRight size={16} />
         </button>
       </div>
     </section>
@@ -173,20 +178,19 @@ function Feature({
       className={`
         px-2
         text-center
-
         ${divider ? "border-l border-[#D8A11A]/30" : ""}
       `}
     >
-      <div className="mb-4 flex justify-center text-[#D8A11A]">
+      <div className="mb-3 flex justify-center text-[#D8A11A]">
         {icon}
       </div>
 
       <h3
         className="
-          min-h-[62px]
-          text-[13px]
+          mb-2
+          text-[11px]
           font-semibold
-          leading-5
+          leading-4
           text-white
         "
         style={{
@@ -199,8 +203,8 @@ function Feature({
 
       <div
         className="
-          text-[11px]
-          leading-5
+          text-[10px]
+          leading-4
           text-white/85
         "
       >

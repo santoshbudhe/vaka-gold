@@ -148,7 +148,6 @@ style={{
 
         {/* HEIGHT SPACER */}
 
-        <div className="h-[320px]" />
       </div>
     </section>
   );

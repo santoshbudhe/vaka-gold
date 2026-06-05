@@ -31,7 +31,7 @@ export default function HomePage() {
 
   if (!banner) {
     return (
-      <div className="flex min-h-screen items-center justify-center bg-[#FAF7F2]">
+      <div className="flex min-h-screen items-center justify-center bg-[#FFFDF9]">
         <div className="text-center">
           <div
             className="
@@ -55,8 +55,8 @@ export default function HomePage() {
   }
 
   return (
-    <main className="min-h-screen bg-[#FAF7F2] pb-28">
-      <HomeHeaderV2 />
+<main className="min-h-screen bg-[#FFFDF9] pb-28">
+        <HomeHeaderV2 />
 
       <HeroSectionV2 banner={banner} />
 
