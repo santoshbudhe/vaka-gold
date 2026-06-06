@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 html,
 body,
@@ -9,4 +10,41 @@ body,
 
 body {
   background: #ffffff;
+}
+
+/* ========================================
+   VAKA GOLD Animated Gold Logo Effect
+======================================== */
+
+.gold-logo-text {
+  background: linear-gradient(
+    45deg,
+    #bf953f 0%,
+    #fcf6ba 25%,
+    #b38728 50%,
+    #fbf5b7 75%,
+    #aa771c 100%
+  );
+
+  background-size: 400% 100%;
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  animation: shine 12s linear infinite;
+}
+
+@keyframes shine {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }

@@ -1,9 +1,4 @@
-import {
-  Banknote,
-  ShieldCheck,
-  IndianRupee,
-  Users,
-} from "lucide-react";
+import { Calculator, ShieldCheck } from "lucide-react";
 
 export default function HeroSectionV2({
   banner,
@@ -11,53 +6,81 @@ export default function HeroSectionV2({
   banner: any;
 }) {
   return (
-    <section className="bg-[#FAF7F2]">
+    <section>
       <div
-  className="
-    relative
-    overflow-hidden
-  "
->
+        className="
+          relative
+          overflow-hidden
+          min-h-[520px]
+        "
+      >
         {/* HERO IMAGE */}
 
-       <img
-  src={banner.imageUrl}
-  alt={banner.title}
-  className="
-    absolute
-    left-[0px]
-    top-[-50px]
-    h-[360px]
-    object-cover
-  "
-style={{
-  objectPosition: "-120px center",
-}}
-/>
+        <img
+          src={banner.imageUrl}
+          alt={banner.title}
+          className="
+            absolute
+            inset-0
+            h-full
+            w-full
+            object-cover
+          "
+        />
+
+        {/* DARK OVERLAY */}
+
+        <div
+          className="
+            absolute
+            inset-0
+            bg-[#021b35]/30
+          "
+        />
 
         {/* CONTENT */}
 
-<div className="relative z-10 pl-5 pt-5">
-            {/* HEADING */}
+        <div
+          className="
+            relative
+            z-10
+            px-4
+            pt-12
+          "
+        >
+          {/* TOP LABEL */}
+
+          <p
+            className="
+              text-[14px]
+              font-bold
+              tracking-wide
+              text-[#D8A11A]
+            "
+          >
+            GET INSTANT VALUATION
+          </p>
+
+          {/* HEADING */}
 
           <h1
             className="
-              max-w-[260px]
-              text-[28px]
+              mt-3
+              max-w-[380px]
+              text-[29px]
               font-bold
-              leading-[1.25]
-              text-[#111827]
+              leading-[1.4]
+              text-white
             "
             style={{
               fontFamily:
                 'Georgia, "Times New Roman", serif',
             }}
           >
-            Sell Your Gold
+            Get the <br /> Best Value
             <br />
-            With&nbsp;
             <span className="text-[#D8A11A]">
-             Confidence.
+              for Your Gold
             </span>
           </h1>
 
@@ -65,128 +88,80 @@ style={{
 
           <p
             className="
-              mt-1
-              max-w-[165px]
-              text-[11px]
-              leading-5
-              text-[#111827]
+              mt-4
+              max-w-[300px]
+              text-[14px]
+              leading-6
+              text-white
             "
           >
-            Get the best value for your gold
-            with transparent evaluation and{" "}
-            <span className="font-bold">
-              immediate payments.
-            </span>
+            Instant valuation, <br />
+            transparent process, <br />
+            and secure payment.
           </p>
 
-          {/* TRUST SECTION */}
+          {/* CTA BUTTON */}
 
-          <div className="mt-2 max-w-[120px]">
-            <div className="grid grid-cols-2">
-              <TrustItem
-                icon={<ShieldCheck size={21} />}
-                title={
-                  <>
-                    100%
-                    <br />
-                    Transparent
-                    <br />
-                    Evaluation
-                  </>
-                }
-              />
+          <button
+            className="
+              mt-4
+              flex
+              items-center
+              gap-1
+              rounded-xl
+              bg-[#D8A11A]
+              px-2
+              py-3
+              shadow-lg
+            "
+          >
+            <Calculator
+              size={22}
+              className="text-[#021b35]"
+            />
 
-              <TrustItem
-                icon={
-  <div className="relative w-[20px] h-[20px]">
-    <div className="absolute inset-0 rounded-full border-2 border-[#D8A11A]" />
-    <IndianRupee
-      size={11}
-      className="absolute top-[5px] left-[5px] text-[#D8A11A]"
-    />
-  </div>
-}
-                title={
-                  <>
-                    Best Market
-                    <br />
-                    Rates
-                  </>
-                }
-                borderLeft
-              />
-            </div>
+            <span
+              className="
+                text-[13px]
+                font-bold
+                text-[#021b35]
+              "
+              style={{
+                fontFamily:
+                  '"Times New Roman", Times, serif',
+              }}
+            >
+              Get Free Valuation Now
+            </span>
+          </button>
 
-            <div className="mt-4 grid grid-cols-2">
-              <TrustItem
-                icon={<Banknote size={21} />}
-                title={
-                  <>
-                    Immediate
-                    <br />
-                    Payments
-                  </>
-                }
-              />
+          {/* TRUST MESSAGE */}
 
-              <TrustItem
-                icon={<Users size={21} />}
-                title={
-                  <>
-                    Experienced
-                    <br />
-                    & Trusted
-                    <br />
-                    Professionals
-                  </>
-                }
-                borderLeft
-              />
-            </div>
+          <div
+            className="
+              mt-3
+              flex
+              items-center
+              gap-1
+            "
+          >
+            <ShieldCheck
+              size={24}
+              className="text-[#D8A11A]"
+            />
+
+            <span
+              className="
+                text-[13px]
+                font-bold
+                text-[#D8A11A]
+              "
+            >
+              100% Secure & Confidential
+            </span>
           </div>
         </div>
-
-        {/* HEIGHT SPACER */}
-
       </div>
     </section>
-  );
-}
-
-function TrustItem({
-  icon,
-  title,
-  borderLeft = false,
-}: {
-  icon: React.ReactNode;
-  title: React.ReactNode;
-  borderLeft?: boolean;
-}) {
-  return (
-    <div
-      className={`
-        flex
-        flex-col
-        items-center
-        px-4
-        text-center
-        ${borderLeft ? "border-l border-[#E5E7EB]" : ""}
-      `}
-    >
-      <div className="mb-1 text-[#D8A11A]">
-        {icon}
-      </div>
-
-      <div
-        className="
-          text-[8px]
-          font-bold
-          leading-3
-          text-[#111827]
-        "
-      >
-        {title}
-      </div>
-    </div>
   );
 }

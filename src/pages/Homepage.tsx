@@ -9,6 +9,7 @@ import WhyChooseSectionV2 from "../components/home/v2/WhyChooseSectionV2";
 import HowItWorksSectionV2 from "../components/home/v2/HowItWorksSectionV2";
 import TrustedSectionV2 from "../components/home/v2/TrustedSectionV2";
 import StickyFooterV2 from "../components/home/v2/StickyFooterV2";
+import TrustBarV2 from "../components/home/v2/TrustBarV2";
 
 export default function HomePage() {
   const [banner, setBanner] = useState<any>(null);
@@ -57,7 +58,7 @@ export default function HomePage() {
   return (
 <main className="min-h-screen bg-[#FFFDF9] pb-28">
         <HomeHeaderV2 />
-
+<TrustBarV2 />
       <HeroSectionV2 banner={banner} />
 
       <ValuationCardV2 />

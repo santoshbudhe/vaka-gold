@@ -1,105 +1,108 @@
-import { Menu, Phone } from "lucide-react";
+import { Phone } from "lucide-react";
 
 export default function HomeHeaderV2() {
   return (
     <header
-  className="sticky top-0 z-50"
-  style={{
-  background: "#021b35",
-}}
->
+      className="sticky top-0 z-50"
+      style={{
+        background: "#021b35",
+      }}
+    >
       <div
         className="
           flex
           items-center
           justify-between
-          px-1.5
-          py-0.5
+          px-3
+          py-1
         "
       >
         {/* LOGO */}
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1">
           <img
             src="/logo-icon.png"
             alt="VAKA GOLD"
             className="
-              h-[58px]
+              h-[70px]
               w-auto
               shrink-0
               object-contain
             "
           />
 
-          <div>
-            <h1
-              className="
-                text-[18px]
-                font-medium
-                leading-none
-                tracking-wide
-                text-[#D8A11A]
-              "
-              style={{
-                fontFamily:
-                  'Georgia, "Times New Roman", serif',
-              }}
-            >
-              VAKA GOLD
-            </h1>
+          <div className="-mt-1">
+         <h1
+  className="
+    gold-logo-text
+    text-[20px]
+    font-bold
+    leading-none
+    tracking-wide
+  "
+  style={{
+    fontFamily:
+      '"Times New Roman", Times, serif',
+  }}
+>
+  VAKA GOLD
+</h1>
 
             <p
               className="
-                mt-[4px]
-                text-[9px]
+                mt-[3px]
+                text-[11px]
                 leading-none
-                text-[#D8A11A]
+                text-[#F4C04A]
               "
+              style={{
+  fontFamily:
+    '"Times New Roman", Times, serif',
+}}
             >
               Trust. Value. Transparency.
             </p>
           </div>
         </div>
 
-        {/* ACTIONS */}
+        {/* CALL BUTTON */}
 
-        <div className="flex items-center gap-5">
-          {/* PHONE */}
+        <a
+          href="tel:+91917842572444"
+          className="
+            flex
+            items-center
+            gap-2
+            rounded-lg
+            bg-[#D8A11A]
+            px-3
+            py-2
+            shadow-md
+            transition-all
+            duration-200
+            hover:opacity-90
+          "
+        >
+          <Phone
+            size={18}
+            className="text-[#021b35]"
+          />
 
-          <button
+          <span
             className="
-              flex
-              h-11
-              w-11
-              items-center
-              justify-center
-              rounded-lg
-              border
-              border-[#D8A11A]
-              bg-transparent
+              text-[15px]
+              font-bold
+              tracking-tight
+              text-[#021b35]
+              whitespace-nowrap
             "
+            style={{
+              fontFamily: "Inter, sans-serif",
+            }}
           >
-            <Phone
-              size={17}
-              className="text-[#D8A11A]"
-            />
-          </button>
-
-          {/* MENU */}
-
-          <button
-            className="
-              flex
-              items-center
-              justify-center
-            "
-          >
-            <Menu
-              size={28}
-              className="text-white"
-            />
-          </button>
-        </div>
+            Call Us
+          </span>
+        </a>
       </div>
     </header>
   );

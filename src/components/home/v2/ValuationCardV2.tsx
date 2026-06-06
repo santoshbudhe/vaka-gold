@@ -4,7 +4,10 @@ import {
   Lock,
 } from "lucide-react";
 
+import { useNavigate } from "react-router-dom";
+
 export default function ValuationCardV2() {
+  const navigate = useNavigate();
   return (
     <section className="px-4 pt-3 pb-4">
       <div
@@ -53,24 +56,25 @@ export default function ValuationCardV2() {
           valuation.
         </p>
 
-        <button
-          className="
-            mt-2
-            flex
-            w-full
-            items-center
-            justify-center
-            gap-2
-            rounded-xl
-            py-2
-            text-[15px]
-            font-semibold
-            text-white
-          "
-          style={{
-  background: "#021B35",
-}}
-        >
+     <button
+  onClick={() => navigate("/sell")}
+  className="
+    mt-1
+    flex
+    w-full
+    items-center
+    justify-center
+    gap-2
+    rounded-xl
+    py-2
+    text-[15px]
+    font-semibold
+    text-white
+  "
+  style={{
+    background: "#021B35",
+  }}
+>
           <Calculator
             size={18}
             className="text-[#D8A11A]"
