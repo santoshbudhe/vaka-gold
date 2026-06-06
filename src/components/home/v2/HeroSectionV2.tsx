@@ -11,32 +11,25 @@ export default function HeroSectionV2({
         className="
           relative
           overflow-hidden
-          min-h-[520px]
+          min-h-[310px]
         "
       >
         {/* HERO IMAGE */}
 
-        <img
-          src={banner.imageUrl}
-          alt={banner.title}
-          className="
-            absolute
-            inset-0
-            h-full
-            w-full
-            object-cover
-          "
-        />
+  <img
+  src={banner.imageUrl}
+  alt={banner.title}
+  className="
+    absolute
+    inset-0
+    h-full
+    w-full
+    object-cover
+  "
+/>
+        
 
-        {/* DARK OVERLAY */}
-
-        <div
-          className="
-            absolute
-            inset-0
-            bg-[#021b35]/30
-          "
-        />
+        
 
         {/* CONTENT */}
 
@@ -45,7 +38,7 @@ export default function HeroSectionV2({
             relative
             z-10
             px-4
-            pt-12
+            pt-5
           "
         >
           {/* TOP LABEL */}
@@ -66,7 +59,7 @@ export default function HeroSectionV2({
           <h1
             className="
               mt-3
-              max-w-[380px]
+              max-w-[300px]
               text-[29px]
               font-bold
               leading-[1.4]
@@ -77,10 +70,9 @@ export default function HeroSectionV2({
                 'Georgia, "Times New Roman", serif',
             }}
           >
-            Get the <br /> Best Value
-            <br />
+            Get the Best Value <br />
             <span className="text-[#D8A11A]">
-              for Your Gold
+               for Your Gold
             </span>
           </h1>
 
@@ -95,8 +87,8 @@ export default function HeroSectionV2({
               text-white
             "
           >
-            Instant valuation, <br />
-            transparent process, <br />
+            Instant valuation,
+            transparent  <br /> process,
             and secure payment.
           </p>
 
@@ -122,7 +114,7 @@ export default function HeroSectionV2({
 
             <span
               className="
-                text-[13px]
+                text-[15px]
                 font-bold
                 text-[#021b35]
               "
@@ -152,7 +144,7 @@ export default function HeroSectionV2({
 
             <span
               className="
-                text-[13px]
+                text-[10px]
                 font-bold
                 text-[#D8A11A]
               "

@@ -1,35 +1,40 @@
 import {
   ArrowRight,
-  Calculator,
   Lock,
+  MapPin,
+  Phone,
+  Scale,
+  User,
 } from "lucide-react";
 
 import { useNavigate } from "react-router-dom";
 
 export default function ValuationCardV2() {
   const navigate = useNavigate();
+
   return (
-    <section className="px-4 pt-3 pb-4">
+    <section className="px-4 pt-2 pb-3">
       <div
         className="
-          rounded-[24px]
+          rounded-[20px]
           border
-          border-[#E5E7EB]
+          border-[#D1D5DB]
           bg-white
-          px-6
-          py-6
+          px-4
+          py-4
         "
         style={{
           boxShadow:
             "0 4px 20px rgba(15,23,42,0.08)",
         }}
       >
+        {/* Heading */}
+
         <h2
           className="
             text-center
-            text-[19px]
+            text-[18px]
             font-bold
-            leading-4
             text-[#111827]
           "
           style={{
@@ -44,11 +49,11 @@ export default function ValuationCardV2() {
           className="
             mx-auto
             mt-1
-            max-w-[320px]
+            max-w-[290px]
             text-center
             text-[12px]
             leading-4
-            text-[#111827]
+            text-[#374151]
           "
         >
           Fill in your details and our expert
@@ -56,37 +61,89 @@ export default function ValuationCardV2() {
           valuation.
         </p>
 
-     <button
-  onClick={() => navigate("/sell")}
-  className="
-    mt-1
-    flex
-    w-full
-    items-center
-    justify-center
-    gap-2
-    rounded-xl
-    py-2
-    text-[15px]
-    font-semibold
-    text-white
-  "
-  style={{
-    background: "#021B35",
-  }}
->
-          <Calculator
-            size={18}
-            className="text-[#D8A11A]"
+        {/* Row 1 */}
+
+        <div className="mt-3 grid grid-cols-2 gap-2">
+          <InputBox
+            icon={<User size={15} />}
+            placeholder="Full Name"
           />
 
-          Request Valuation
+          <InputBox
+            icon={<Phone size={15} />}
+            placeholder="Mobile Number"
+          />
+        </div>
+
+        {/* City */}
+
+        <div className="mt-2">
+          <InputBox
+            icon={<MapPin size={15} />}
+            placeholder="City"
+          />
+        </div>
+
+        {/* Weight */}
+
+        <div className="mt-2">
+          <InputBox
+            icon={<Scale size={15} />}
+            placeholder="Approx. Gold Weight"
+          />
+        </div>
+
+        {/* Notes */}
+
+        <textarea
+          placeholder="Any additional information (optional)"
+          className="
+            mt-2
+            w-full
+            rounded-lg
+            border
+            border-[#E5E7EB]
+            px-3
+            py-2.5
+            text-[12px]
+            font-medium
+            text-[#4B5563]
+            outline-none
+            resize-none
+          "
+          rows={1}
+        />
+
+        {/* CTA */}
+
+        <button
+          onClick={() => navigate("/sell")}
+          className="
+            mt-3
+            flex
+            w-full
+            items-center
+            justify-center
+            gap-2
+            rounded-lg
+            py-2.5
+            text-[15px]
+            font-semibold
+            text-white
+          "
+          style={{
+            background: "#021B35",
+          }}
+        >
+          Request Valuation Now
 
           <ArrowRight
             size={18}
             className="text-[#D8A11A]"
           />
         </button>
+
+        {/* Trust */}
 
         <div
           className="
@@ -95,16 +152,56 @@ export default function ValuationCardV2() {
             items-center
             justify-center
             gap-2
+            text-center
             text-[10px]
-            text-[#687280]
+            text-[#6B7280]
           "
         >
           <Lock size={11} />
 
-          Your information is 100% secure and
-          confidential.
+          <span>
+            Your information is 100% secure
+            and confidential.
+          </span>
         </div>
       </div>
     </section>
+  );
+}
+
+function InputBox({
+  icon,
+  placeholder,
+}: {
+  icon: React.ReactNode;
+  placeholder: string;
+}) {
+  return (
+    <div
+      className="
+        flex
+        items-center
+        gap-2
+        rounded-lg
+        border
+        border-[#E5E7EB]
+        px-3
+        py-2.5
+      "
+    >
+      <div className="text-[#4B5563]">
+        {icon}
+      </div>
+
+      <span
+        className="
+          text-[12px]
+          font-medium
+          text-[#4B5563]
+        "
+      >
+        {placeholder}
+      </span>
+    </div>
   );
 }

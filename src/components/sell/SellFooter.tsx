@@ -1,184 +1,96 @@
 import {
   MessageCircle,
-  ShieldCheck,
-  Lock,
-  Users,
-  Phone,
-  Circle,
 } from "lucide-react";
 
 export default function SellFooter() {
   return (
-    <footer className="px-4 pt-4 pb-8">
+    <footer className="px-4 pt-2 pb-6">
       <div
         className="
-          overflow-hidden
           rounded-[20px]
           bg-[#021B35]
           px-5
-          py-5
+          py-6
           text-white
+          text-center
         "
       >
         {/* LOGO */}
 
-        <div className="flex items-center gap-2">
+        <div className="flex justify-center">
           <img
-            src="/logo-icon.png"
+            src="/logo.png"
             alt="VAKA GOLD"
-            className="
-              h-[58px]
-              w-auto
-              shrink-0
-              object-contain
-            "
+            className="h-[130px] w-auto"
           />
-
-          <div>
-            <h2
-              className="
-                text-[18px]
-                font-medium
-                leading-none
-                tracking-wide
-                text-[#D8A11A]
-              "
-              style={{
-                fontFamily:
-                  'Georgia, "Times New Roman", serif',
-              }}
-            >
-              VAKA GOLD
-            </h2>
-
-            <p
-              className="
-                mt-[4px]
-                text-[9px]
-                leading-none
-                text-[#D8A11A]
-              "
-            >
-              Trust. Value. Transparency.
-            </p>
-          </div>
         </div>
 
-        {/* FOLLOW US */}
+        {/* DESCRIPTION */}
 
-        <div className="mt-4 text-center">
-          <p className="text-[13px] font-medium">
-            Follow Us
-          </p>
+        <p
+          className="
+            mx-auto
+            mt-4
+            max-w-[300px]
+            text-[14px]
+            leading-6
+            text-white/90
+          "
+        >
+          We offer the best value for your gold with
+          transparency, honesty and immediate payments.
+        </p>
 
-          <div className="mt-3 flex justify-center gap-3">
-            <a
-              href="#"
-              className="
-                flex
-                h-9
-                w-9
-                items-center
-                justify-center
-                rounded-full
-                bg-white
-                text-[#021B35]
-              "
-            >
-              <Circle size={16} />
-            </a>
-
-            <a
-              href="#"
-              className="
-                flex
-                h-9
-                w-9
-                items-center
-                justify-center
-                rounded-full
-                bg-white
-                text-[#021B35]
-              "
-            >
-              <Circle size={16} />
-            </a>
-
-            <a
-              href="#"
-              className="
-                flex
-                h-9
-                w-9
-                items-center
-                justify-center
-                rounded-full
-                bg-white
-                text-[#021B35]
-              "
-            >
-              <MessageCircle size={16} />
-            </a>
-          </div>
-        </div>
-
-        {/* DIVIDER */}
-
-        <div className="my-4 h-px bg-white/20" />
-
-        {/* TRUST */}
+        {/* FOLLOW */}
 
         <h3
           className="
-            text-center
-            text-[15px]
-            font-semibold
+            mt-5
+            text-[18px]
+            font-bold
+            text-white
           "
+          style={{
+            fontFamily:
+              'Georgia, "Times New Roman", serif',
+          }}
         >
-          We Value Your Trust
+          Follow Us
         </h3>
 
-        <div className="mt-3 grid grid-cols-3 gap-3">
-          <TrustItem
-            icon={<ShieldCheck size={20} />}
-            title="Secure"
-            subtitle="Process"
-          />
+        {/* SOCIALS */}
 
-          <TrustItem
-            icon={<Lock size={20} />}
-            title="Confidential"
-            subtitle="Service"
-          />
-
-          <TrustItem
-            icon={<Users size={20} />}
-            title="Trusted"
-            subtitle="Professionals"
-          />
-        </div>
-
-        {/* BUTTONS */}
-
-        <div className="mt-4 grid grid-cols-2 gap-3">
+        <div className="mt-4 flex justify-center gap-6">
           <a
-            href="tel:7207395447"
+            href="#"
             className="
               flex
+              h-12
+              w-12
               items-center
               justify-center
-              gap-2
-              rounded-lg
-              border
-              border-[#D8A11A]
-              py-3
-              text-[14px]
-              font-semibold
-              text-white
+              rounded-full
+              bg-white
+              text-[#021B35]
             "
           >
-            <Phone size={16} />
-            Call Us Now
+            <MessageCircle size={24} />
+          </a>
+
+          <a
+            href="#"
+            className="
+              flex
+              h-12
+              w-12
+              items-center
+              justify-center
+              rounded-full
+              bg-white
+              text-[#021B35]
+            "
+          >
+            <MessageCircle size={24} />
           </a>
 
           <a
@@ -187,19 +99,16 @@ export default function SellFooter() {
             rel="noreferrer"
             className="
               flex
+              h-12
+              w-12
               items-center
               justify-center
-              gap-2
-              rounded-lg
-              bg-[#16A34A]
-              py-3
-              text-[14px]
-              font-semibold
-              text-white
+              rounded-full
+              bg-white
+              text-[#021B35]
             "
           >
-            <MessageCircle size={16} />
-            Chat on WhatsApp
+            <MessageCircle size={24} />
           </a>
         </div>
 
@@ -207,9 +116,8 @@ export default function SellFooter() {
 
         <p
           className="
-            mt-4
-            text-center
-            text-[11px]
+            mt-5
+            text-[13px]
             text-white/70
           "
         >
@@ -217,43 +125,5 @@ export default function SellFooter() {
         </p>
       </div>
     </footer>
-  );
-}
-
-function TrustItem({
-  icon,
-  title,
-  subtitle,
-}: {
-  icon: React.ReactNode;
-  title: string;
-  subtitle: string;
-}) {
-  return (
-    <div className="text-center">
-      <div className="flex justify-center text-[#D8A11A]">
-        {icon}
-      </div>
-
-      <div
-        className="
-          mt-2
-          text-[10px]
-          font-medium
-          text-white
-        "
-      >
-        {title}
-      </div>
-
-      <div
-        className="
-          text-[10px]
-          text-white/80
-        "
-      >
-        {subtitle}
-      </div>
-    </div>
   );
 }

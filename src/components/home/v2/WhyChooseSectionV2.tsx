@@ -2,14 +2,11 @@ import {
   ShieldCheck,
   BadgeDollarSign,
   Banknote,
-  Users,
-  ArrowRight,
+  Users
 } from "lucide-react";
 
-import { useNavigate } from "react-router-dom";
 
 export default function WhyChooseSectionV2() {
-  const navigate = useNavigate();
   return (
     <section className="px-4">
       <div
@@ -134,33 +131,7 @@ export default function WhyChooseSectionV2() {
 
         {/* BUTTON */}
 
-      <button
-  onClick={() => navigate("/about")}
-  className="
-    mx-auto
-    mt-5
-    flex
-    w-[72%]
-    items-center
-    justify-center
-    gap-3
-    rounded-xl
-    border
-    border-[#D8A11A]
-    py-2
-    text-[14px]
-    font-semibold
-    text-[#D8A11A]
-  "
-  style={{
-    fontFamily:
-      'Georgia, "Times New Roman", serif',
-  }}
->
-  About VAKA GOLD
-
-  <ArrowRight size={16} />
-</button>
+   
       </div>
     </section>
   );

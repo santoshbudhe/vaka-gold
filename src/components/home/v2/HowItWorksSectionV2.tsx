@@ -2,8 +2,7 @@ import {
   Phone,
   Search,
   FileText,
-  Banknote,
-  ArrowRight,
+  Banknote
 } from "lucide-react";
 
 export default function HowItWorksSectionV2() {
@@ -76,32 +75,7 @@ export default function HowItWorksSectionV2() {
 
       {/* CTA */}
 
-      <button
-        className="
-          mx-auto
-          mt-4
-          flex
-          w-[80%]
-          items-center
-          justify-center
-          gap-2
-          rounded-xl
-          border
-          border-[#D8A11A]
-          py-2
-          text-[15px]
-          font-semibold
-          text-[#B67A16]
-        "
-        style={{
-          fontFamily:
-            'Georgia, "Times New Roman", serif',
-        }}
-      >
-        View Full Selling Process
-
-        <ArrowRight size={16} />
-      </button>
+      
     </section>
   );
 }

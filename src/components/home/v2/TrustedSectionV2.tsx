@@ -2,8 +2,7 @@ import {
   Users,
   Star,
   ShieldCheck,
-  HeartHandshake,
-  ArrowRight,
+  HeartHandshake
 } from "lucide-react";
 
 export default function TrustedSectionV2() {
@@ -71,32 +70,41 @@ export default function TrustedSectionV2() {
 
         {/* CTA */}
 
-        <button
-          className="
-            mx-auto
-            mt-4
-            flex
-            w-[72%]
-            items-center
-            justify-center
-            gap-2
-            rounded-lg
-            border
-            border-[#D8A11A]
-            py-2
-            text-[14px]
-            font-semibold
-            text-[#D8A11A]
-          "
-          style={{
-            fontFamily:
-              'Georgia, "Times New Roman", serif',
-          }}
-        >
-          Contact Our Team
+       <a
+  href="https://www.google.com/search?q=VAKA+GOLD+Vijayawada"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="
+    mt-4
+    flex
+    w-full
+    items-center
+    justify-center
+    gap-3
+    rounded-xl
+    border
+    border-[#D1D5DB]
+    bg-white
+    py-3
+    text-[15px]
+    font-semibold
+    text-[#111827]
+    shadow-sm
+  "
+  style={{
+    fontFamily:
+      'Georgia, "Times New Roman", serif',
+  }}
+>
+  <img
+  src="https://www.google.com/favicon.ico"
+  alt="Google"
+  className="h-6 w-6"
+  loading="lazy"
+/>
 
-          <ArrowRight size={16} />
-        </button>
+  Read Reviews on Google
+</a>
       </div>
     </section>
   );
