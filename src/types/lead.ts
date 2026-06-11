@@ -1,21 +1,24 @@
 export interface Lead {
-  leadId: string;
+leadId: string;
 
-  name: string;
+name: string;
 
-  mobileNumber: string;
+mobileNumber: string;
 
-  city: string;
+city: string;
 
-  approxGoldWeight: string;
+approxGoldWeight: string;
 
-  notes?: string;
+notes?: string;
 
-  sourcePage: string;
+sourcePage: string;
 
-  sourceComponent: string;
+sourceComponent: string;
 
-  status: "new" | "contacted" | "visited" | "converted";
+status:
+| "new"
+| "contacted"
+| "converted";
 
-  createdAt?: any;
+createdAt?: any;
 }

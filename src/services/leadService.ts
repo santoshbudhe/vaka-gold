@@ -1,28 +1,56 @@
 import {
-  collection,
-  addDoc,
-  serverTimestamp,
+addDoc,
+collection,
+getDocs,
+orderBy,
+query,
+serverTimestamp,
+doc,
+updateDoc,
 } from "firebase/firestore";
 
 import { db } from "./firebase";
 
-import { Lead } from "../types/lead";
+import type { Lead } from "../types/lead";
 
 export async function createLead(
-  lead: Omit<Lead, "createdAt">
+lead: Omit<Lead, "createdAt">
 ) {
-  try {
-    await addDoc(
-      collection(db, "leads"),
-      {
-        ...lead,
-        createdAt: serverTimestamp(),
-      }
-    );
+await addDoc(
+collection(db, "leads"),
+{
+...lead,
+createdAt: serverTimestamp(),
+}
+);
+}
 
-    return true;
-  } catch (error) {
-    console.error(error);
-    throw error;
-  }
+export async function getLeads() {
+const q = query(
+collection(db, "leads"),
+orderBy("createdAt", "desc")
+);
+
+const snapshot =
+await getDocs(q);
+
+return snapshot.docs.map((doc) => ({
+id: doc.id,
+...doc.data(),
+}));
+}
+
+export async function updateLeadStatus(
+documentId: string,
+status:
+| "new"
+| "contacted"
+| "converted"
+) {
+await updateDoc(
+doc(db, "leads", documentId),
+{
+status,
+}
+);
 }
