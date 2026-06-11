@@ -7,16 +7,22 @@ from "../../components/admin/LeadDetailsDrawer";
 import {
 Phone,
 MessageCircle,
+LogOut,
 } from "lucide-react";
 
 import LeadStatusBadge from "../../components/admin/LeadStatusBadge";
-
+import { signOut } from "firebase/auth";
+import { auth } from "../../services/firebase";
+import { useNavigate } from "react-router-dom";
 import {
 getLeads,
 updateLeadStatus,
 } from "../../services/leadService";
 
 export default function LeadsPage() {
+const navigate =
+  useNavigate();
+
 const [leads, setLeads] =
 useState<any[]>([]);
 
@@ -24,22 +30,47 @@ const [loading, setLoading] =
 useState(true);
 const [selectedLead, setSelectedLead] =
   useState<any>(null);
+async function handleLogout() {
+  try {
+    await signOut(auth);
+
+    navigate("/admin/login");
+  } catch (error) {
+    console.error(error);
+  }
+}
+
 useEffect(() => {
-loadLeads();
+  console.log(
+    "LeadsPage mounted"
+  );
+
+  loadLeads();
 }, []);
 
 async function loadLeads() {
-try {
-const data =
-await getLeads();
+  try {
+    console.log(
+      "Loading leads..."
+    );
 
-  setLeads(data);
-} catch (error) {
-  console.error(error);
-} finally {
-  setLoading(false);
-}
+    const data =
+      await getLeads();
 
+    console.log(
+      "Leads returned:",
+      data
+    );
+
+    setLeads(data);
+  } catch (error) {
+    console.error(
+      "Lead load error:",
+      error
+    );
+  } finally {
+    setLoading(false);
+  }
 }
 
 async function changeStatus(
@@ -80,9 +111,28 @@ l.status === "converted"
 
 return ( <div className="min-h-screen bg-[#F8F6F3] p-4"> <div className="mx-auto max-w-7xl">
 
-    <h1 className="mb-6 text-3xl font-bold">
-      Leads Dashboard
-    </h1>
+   <div className="mb-6 flex items-center justify-between">
+  <h1 className="text-3xl font-bold">
+    Leads Dashboard
+  </h1>
+
+  <button
+    onClick={handleLogout}
+    className="
+      flex
+      items-center
+      gap-2
+      rounded-lg
+      bg-[#021B35]
+      px-4
+      py-2
+      text-white
+    "
+  >
+    <LogOut size={18} />
+    Logout
+  </button>
+</div>
 
     {/* Stats */}
 

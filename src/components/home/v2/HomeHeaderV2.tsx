@@ -20,16 +20,17 @@ export default function HomeHeaderV2() {
         {/* LOGO */}
 
         <div className="flex items-center gap-1">
-          <img
-            src="/logo-icon.png"
-            alt="VAKA GOLD"
-            className="
-              h-[70px]
-              w-auto
-              shrink-0
-              object-contain
-            "
-          />
+        <img
+  src="/logo-icon.png"
+  alt="VAKA GOLD"
+  className="
+    logo-intro
+    h-[70px]
+    w-auto
+    shrink-0
+    object-contain
+  "
+/>
 
           <div className="-mt-1">
          <h1

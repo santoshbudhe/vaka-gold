@@ -14,7 +14,8 @@ import TermsPage from "./pages/support/TermsPage";
 import SubmissionErrorPage from "./pages/support/SubmissionErrorPage";
 import MaintenancePage from "./pages/support/MaintenancePage";
 import NotFoundPage from "./pages/support/NotFoundPage";  
-
+import LoginPage from "./pages/admin/LoginPage";
+import ProtectedRoute from "./components/admin/ProtectedRoute";
 export default function App() {
   console.log("THANK YOU ROUTE REGISTERED");
   return (
@@ -66,9 +67,18 @@ export default function App() {
 />
 
 <Route
+  path="/admin/login"
+  element={<LoginPage />}
+/>
+
+<Route
   path="/admin/leads"
-  element={<LeadsPage />}
-/>      </Routes>
+  element={
+    <ProtectedRoute>
+      <LeadsPage />
+    </ProtectedRoute>
+  }
+/>     </Routes>
     </BrowserRouter>
   );
 }

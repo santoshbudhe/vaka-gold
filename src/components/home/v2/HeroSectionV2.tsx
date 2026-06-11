@@ -1,48 +1,68 @@
+import { useState } from "react";
 import { Calculator, ShieldCheck } from "lucide-react";
 
 export default function HeroSectionV2({
-  banner,
+  imageUrl,
+  onGetValuation,
 }: {
-  banner: any;
+  imageUrl: string;
+  onGetValuation: () => void;
 }) {
+  const [imageLoaded, setImageLoaded] =
+    useState(false);
+
   return (
     <section>
       <div
         className="
           relative
           overflow-hidden
-          min-h-[310px]
+          h-[340px]
+          bg-[#021B35]
         "
       >
         {/* HERO IMAGE */}
 
-  <img
-  src={banner.imageUrl}
-  alt={banner.title}
-  className="
-    absolute
-    inset-0
-    h-full
-    w-full
-    object-cover
-  "
-/>
-        
+        <img
+          src={imageUrl}
+          alt="VAKA GOLD"
+          width="390"
+          height="585"
+          loading="eager"
+          onLoad={(e) => {
+            console.log(
+              "Hero image size:",
+              e.currentTarget.naturalWidth,
+              e.currentTarget.naturalHeight
+            );
 
-        
+            setImageLoaded(true);
+          }}
+          className="
+            absolute
+            inset-0
+            w-full
+            object-cover
+          "
+        />
 
         {/* CONTENT */}
 
         <div
-          className="
+          className={`
             relative
             z-10
             px-4
             pt-5
-          "
+            transition-opacity
+            duration-300
+            ${
+              imageLoaded
+                ? "opacity-100"
+                : "opacity-0"
+            }
+          `}
         >
-          {/* TOP LABEL */}
-
           <p
             className="
               text-[14px]
@@ -53,8 +73,6 @@ export default function HeroSectionV2({
           >
             GET INSTANT VALUATION
           </p>
-
-          {/* HEADING */}
 
           <h1
             className="
@@ -70,13 +88,13 @@ export default function HeroSectionV2({
                 'Georgia, "Times New Roman", serif',
             }}
           >
-            Get the Best Value <br />
+            Get the Best Value
+            <br />
+
             <span className="text-[#D8A11A]">
-               for Your Gold
+              for Your Gold
             </span>
           </h1>
-
-          {/* DESCRIPTION */}
 
           <p
             className="
@@ -88,13 +106,14 @@ export default function HeroSectionV2({
             "
           >
             Instant valuation,
-            transparent  <br /> process,
+            transparent
+            <br />
+            process,
             and secure payment.
           </p>
 
-          {/* CTA BUTTON */}
-
           <button
+            onClick={onGetValuation}
             className="
               mt-4
               flex
@@ -105,6 +124,9 @@ export default function HeroSectionV2({
               px-2
               py-3
               shadow-lg
+              transition-all
+              duration-200
+              hover:opacity-90
             "
           >
             <Calculator
@@ -126,8 +148,6 @@ export default function HeroSectionV2({
               Get Free Valuation Now
             </span>
           </button>
-
-          {/* TRUST MESSAGE */}
 
           <div
             className="
